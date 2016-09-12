@@ -1,0 +1,62 @@
+
+<div class="m-t-20">
+
+<h2 class="es-calendar-month"><span ng-bind="$ctrl.action.title"></span></h2>
+
+<form name="eventForm" novalidate>
+    <div class="form-group m-t-20">
+        <button class="btn btn-default" ng-click="$ctrl.back()"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+        <button class="btn btn-primary pull-right" ng-disabled="!$ctrl.isValid" ng-click="$ctrl.addEvent()" 
+        class="ng-hide" ng-show="$ctrl.action.type=='add'">Add</button>
+        <button class="btn btn-primary pull-right" ng-disabled="!$ctrl.isValid" ng-click="$ctrl.updateEvent()" 
+        class="ng-hide" ng-show="$ctrl.action.type=='edit'">Save</button>
+    </div>
+
+    <div class="form-group">
+        <input type="text" ng-model="$ctrl.event.name" class="form-control" placeholder="Untitled event">
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="dropdown form-group">
+                <a class="dropdown-toggle" id="eventStartDate" data-toggle="dropdown" data-target="#" >
+                    <div class="input-group es-datepicker">
+                    		<span class="form-control  es-datepicker-label" ng-bind="$ctrl.event.start | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' "></span>
+                        <input type="text" class="form-control es-datepicker-input" data-ng-model="$ctrl.event.start" required name="eventStartDate"  placeholder="Event start at " readonly>
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                    </div>
+									
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <datetimepicker data-ng-model="$ctrl.event.start" data-before-render="$ctrl.beforeTimePick($dates)" data-datetimepicker-config="{ dropdownSelector: '#eventStartDate', modelType : 'moment' }"></datetimepicker>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="dropdown form-group" ng-show="!$ctrl.event.isAllDay">
+                <a class="dropdown-toggle" id="eventEndDate" data-toggle="dropdown" data-target="#" >
+                    <div class="input-group es-datepicker">
+                    <span class="form-control  es-datepicker-label" ng-bind="$ctrl.event.end | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' "></span>
+                        <input type="text" class="form-control  es-datepicker-input" data-ng-model="$ctrl.event.end" required name="eventEndDate" placeholder="Event finish at" readonly>
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                    </div>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <datetimepicker data-ng-model="$ctrl.event.end"  data-before-render="$ctrl.beforeTimePick($dates)"  data-datetimepicker-config="{ dropdownSelector: '#eventEndDate', modelType : 'moment'}"></datetimepicker>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" ng-model="$ctrl.event.isAllDay" /> All day
+            </label>
+        </div>
+
+    </div>
+    <div>
+        <label for="eventDesc">Description</label>
+        <textarea ng-model="$ctrl.event.description" class="form-control" rows="3" id="eventDesc"></textarea>
+    </div>
+</form>
+</div>

@@ -1,0 +1,34 @@
+<div class="m-b-0">
+  <!-- <div class="panel-heading"> -->
+  <div class="es-day-header">
+    <span class="es-day-number" ng-bind="$ctrl.currentDay | amDateFormat: 'DD' "></span>
+    <span class="es-day-name" ng-bind="$ctrl.currentDay | amDateFormat: 'dddd' "></span>
+  </div>
+  <!-- </div> -->
+  <div class="es-day-body p-0">
+    <div class="ng-hide" ng-show="!$ctrl.events.length">
+      <p class="text-center p-10"><i class="fa fa-calendar-o" aria-hidden="true"></i>
+        <br>There are no events</p>
+    </div>
+    <div ng-repeat="event in $ctrl.events track by $index" class="es-event-list">
+      <div class="es-event-remove text-right" ng-click="$ctrl.removeEvent(event.uid, $index)"><i class="fa fa-times"></i></div>
+
+      <div class="es-event-wrapper p-10" ng-click="$ctrl.viewDetails(event.uid)">
+      
+
+        <span ng-bind="event.name" class="es-event-name"></span>
+      
+        <div class="es-event-time">
+          <i class="fa fa-clock-o" aria-hidden="true"></i> <span ng-bind="event.start | amDateFormat: 'h:mm a' "></span> -
+      
+          <div ng-if="!event.isAllDay">
+            <span ng-bind="event.end | amDateFormat: 'h:mm a' "></span>
+          </div>
+      
+          <span ng-if="event.isAllDay">All day</span>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+</div>

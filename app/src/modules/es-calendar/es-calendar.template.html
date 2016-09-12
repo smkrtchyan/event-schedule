@@ -1,0 +1,19 @@
+<div class="cal-container m-t-20">
+  <div class="es-calendar-header clearfix">
+
+    <h2 class="es-calendar-month"><span ng-bind="$ctrl.today | amDateFormat: 'MMMM YYYY' "></span></h2>
+
+    <div class="es-calendar-controls m-b-15">
+      <div class="btn-group">
+        
+        <button ng-click="$ctrl.goToWeek(-1)" class="btn btn-default btn"><i class="fa fa-chevron-left"></i></button>
+        <button ng-click="$ctrl.goToWeek(1)" class="btn btn-default"><i class="fa fa-chevron-right"></i></button>
+        <a ng-href="#!/event" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+      </div>
+    </div>
+    
+  </div>
+  <div class="es-week-container">
+    <es-day today='$ctrl.today' day-of-week="$index" week-of-year="$ctrl.currentWeek" ng-repeat="i in [0,1,2,3,4,5,6] track by $index" class="es-day-container"></es-day>
+  </div>
+</div>

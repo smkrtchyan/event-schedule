@@ -1,0 +1,13 @@
+<div class="ui-notification custom-template">
+  <h3 ng-bind="title"></h3>
+  <div class="message" ng-bind-html="message"></div>
+  <div class="message">
+    
+      <div ng-repeat="event in upcomingEvents">
+        <h5>{{event.name}}</h5>
+        <p><span ng-bind="event.start | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a'"></span></p>
+      </div>
+    
+  </div>
+  
+</div>

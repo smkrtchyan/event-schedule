@@ -1,0 +1,15 @@
+@import 'core/variables';
+@import 'vendors/custom-bootstrap-variables';
+
+// Vendorsx
+@import '../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap';
+@import '../../bower_components/font-awesome/scss/font-awesome.scss';
+@import '../../bower_components/angular-bootstrap-datetimepicker/src/scss/datetimepicker';
+
+// Core
+@import 'helpers/helpers';
+@import 'core/icons';
+@import 'core/structure';
+
+// Components
+@import 'components/calendar.component'
