@@ -45,16 +45,21 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest(config.app.dist + '/scripts'))
 });
 
+gulp.task('fonts', function() {
+   return gulp.src(config.fonts)
+   .pipe(gulp.dest(config.app.dist + '/fonts'));
+});
+
 gulp.task('clean:dist', function (cb) {
   rimraf(config.app.dist, cb);
 });
 
 
-gulp.task('watch', ['styles', 'scripts'], function() {
+gulp.task('watch', ['fonts', 'styles', 'scripts'], function() {
 
   gulp.watch(config.styles, ['styles']);
   gulp.watch(config.scripts,['scripts']);
   gulp.watch(config.templates,['scripts']);
 })
 
-gulp.task('build', ['clean:dist', 'styles', 'scripts']);
+gulp.task('build', ['clean:dist', 'fonts', 'styles', 'scripts']);
