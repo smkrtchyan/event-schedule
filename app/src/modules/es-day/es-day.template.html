@@ -7,7 +7,7 @@
   <!-- </div> -->
   <div class="es-day-body p-0">
     <div class="ng-hide" ng-show="!$ctrl.events.length">
-      <p class="text-center p-10"><i class="fa fa-calendar-o" aria-hidden="true"></i>
+      <p class="text-center p-10 m-b-0 es-no-events"><i class="fa fa-calendar-o" aria-hidden="true"></i>
         <br>There are no events</p>
     </div>
     <div ng-repeat="event in $ctrl.events track by $index" class="es-event-list">
@@ -21,9 +21,9 @@
         <div class="es-event-time">
           <i class="fa fa-clock-o" aria-hidden="true"></i> <span ng-bind="event.start | amDateFormat: 'h:mm a' "></span> -
       
-          <div ng-if="!event.isAllDay">
+          <span ng-if="!event.isAllDay">
             <span ng-bind="event.end | amDateFormat: 'h:mm a' "></span>
-          </div>
+          </span>
       
           <span ng-if="event.isAllDay">All day</span>
         </div>

@@ -7996,6 +7996,72 @@ button.close {
   .datetimepicker .future {
     color: #999; }
 
+/**
+ * angular-ui-notification - Angular.js service providing simple notifications using Bootstrap 3 styles with css transitions for animating
+ * @author Alex_Crack
+ * @version v0.2.0
+ * @link https://github.com/alexcrack/angular-ui-notification
+ * @license MIT
+ */
+.ui-notification {
+  position: fixed;
+  z-index: 9999;
+  width: 300px;
+  transition: all ease .5s;
+  color: #fff;
+  border-radius: 3px;
+  background: #337ab7; }
+
+.ui-notification.clickable {
+  cursor: pointer; }
+
+.ui-notification.clickable:hover {
+  opacity: .7; }
+
+.ui-notification.killed {
+  transition: opacity ease 1s;
+  opacity: 0; }
+
+.ui-notification > h3 {
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  margin: 10px 10px 0 10px;
+  padding: 0 0 5px 0;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+
+.ui-notification a {
+  color: #fff; }
+
+.ui-notification a:hover {
+  text-decoration: underline; }
+
+.ui-notification > .message {
+  margin: 10px 10px 10px 10px; }
+
+.ui-notification.warning {
+  color: #fff;
+  background: #f0ad4e; }
+
+.ui-notification.error {
+  color: #fff;
+  background: #d9534f; }
+
+.ui-notification.success {
+  color: #5e732d;
+  background: #f8faf2;
+  border: 1px solid #8baa43; }
+  .ui-notification.success .fa {
+    font-size: 16px; }
+
+.ui-notification.info {
+  color: #fff;
+  background: #5bc0de; }
+
+.upcoming-event-item {
+  border-top: 1px solid #b8cf84; }
+
 .m-0 {
   margin: 0px; }
 
@@ -8331,7 +8397,7 @@ button.close {
   color: #5e732d; }
 
 .es-calendar-controls {
-  text-align: right; }
+  text-align: left; }
 
 @media (min-width: 992px) {
   .es-week-container {
@@ -8358,7 +8424,7 @@ button.close {
       text-align: center; } }
 
 .es-day-body {
-  background-color: rgba(139, 170, 67, 0.1); }
+  background-color: rgba(139, 170, 67, 0.05); }
   @media (min-width: 992px) {
     .es-day-body {
       background-color: transparent; } }
@@ -8383,9 +8449,12 @@ button.close {
 .es-event-wrapper {
   transition: all .3s ease;
   cursor: pointer;
-  padding: 20px 5px 5px 5px; }
+  padding: 20px 15px 5px; }
   .es-event-wrapper:hover {
     background-color: rgba(0, 0, 0, 0.05); }
+  @media (min-width: 992px) {
+    .es-event-wrapper {
+      padding: 20px 5px 5px 5px; } }
 
 .es-event-name {
   font-size: 12px;
@@ -8409,6 +8478,11 @@ button.close {
   @media (min-width: 992px) {
     .es-event-remove {
       font-size: 14px; } }
+
+.es-no-events {
+  color: #777;
+  font-size: 12px;
+  font-weight: 300; }
 
 .input-group.es-datepicker {
   cursor: pointer; }

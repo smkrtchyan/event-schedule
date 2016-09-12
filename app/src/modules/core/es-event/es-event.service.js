@@ -29,21 +29,21 @@ angular.module('esCore.event')
 		function _addEvent(data){
 			allEvents.push(data);
 			esStorage.set('events', allEvents);
-			Notification.success('Appointment has been created');
+			Notification.success('<i class="fa fa-info-circle"></i> Event has been created');
 		}
 
 		function _updateEvent(id, data){
 			var index = _getEventById(id).index;
 			allEvents[index] = data;
 			esStorage.set('events', allEvents);
-			Notification.success('Appointment has been updated');
+			Notification.success('<i class="fa fa-info-circle"></i> Event has been updated');
 		}
 
 		function _removeEvent(id){
 			var index = _getEventById(id).index;
 			allEvents.splice(index,1);
 			esStorage.set('events', allEvents);
-			Notification.success('Appointment has been removed');
+			Notification.success('<i class="fa fa-info-circle"></i> Event has been removed');
 		}
 
 		function _init(){

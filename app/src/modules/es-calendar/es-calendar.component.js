@@ -33,7 +33,7 @@ function esCalendarController($scope, $interval, moment, Notification, esEvent, 
       angular.forEach(todayEvents, function(event, value) {
         var leftTime = moment(event.start).diff(moment(), 'minutes', true);
 
-        if (leftTime > 0 && leftTime <= 15) {
+        if (leftTime >= 0 && leftTime <= 16) {
           upcomingEvents.push(event);
         }
       });
@@ -41,7 +41,7 @@ function esCalendarController($scope, $interval, moment, Notification, esEvent, 
       if (upcomingEvents.length) {
         $scope.upcomingEvents = upcomingEvents;
 
-        Notification.info({
+        Notification.success({
           title: 'Upcoming events',
           message: message,
           templateUrl: "src/modules/es-calendar/es-calendar-notify.template.html",

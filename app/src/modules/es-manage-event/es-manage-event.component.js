@@ -97,7 +97,7 @@ angular.module('esManageEvent')
 
           _self.action = {
             type: 'edit',
-            title: 'Update appointment',
+            title: 'Update event',
             eventId: selectedEventId,
             eventOldValue: {}
           };
@@ -107,7 +107,7 @@ angular.module('esManageEvent')
 
         } else {
           _self.action.type = 'add';
-          _self.action.title = "Add new appointment";
+          _self.action.title = "Add new event";
           _resetEvent();
         }
       }

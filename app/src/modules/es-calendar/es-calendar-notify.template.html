@@ -1,9 +1,9 @@
 <div class="ui-notification custom-template">
-  <h3 ng-bind="title"></h3>
+  <h3> <i class="fa fa-calendar-o" aria-hidden="true"></i> <span ng-bind="title"></span> </h3>
   <div class="message" ng-bind-html="message"></div>
   <div class="message">
     
-      <div ng-repeat="event in upcomingEvents">
+      <div ng-repeat="event in upcomingEvents" class="upcoming-event-item">
         <h5>{{event.name}}</h5>
         <p><span ng-bind="event.start | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a'"></span></p>
       </div>
