@@ -6,6 +6,15 @@ angular.module('esCore.event')
 	function esEventService(moment, esStorage, Notification) {
 			var allEvents;
 
+		function _sortByStartDates(a,b){
+				if(a.start < b.start)
+					return -1;
+				else if( a.start > b.start) {
+					return 1;
+				}
+				return 0;
+		}
+
 		function _getEventsByDay(currentDay){
 			var todayEvents; 
 
@@ -13,6 +22,7 @@ angular.module('esCore.event')
 				var startDate = new moment(element.start);
 				return currentDay.isSame(startDate, 'day');
 			})
+			todayEvents.sort(_sortByStartDates);
 			return todayEvents;
 		}
 

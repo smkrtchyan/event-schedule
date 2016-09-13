@@ -10,6 +10,7 @@
       <p class="text-center p-10 m-b-0 es-no-events"><i class="fa fa-calendar-o" aria-hidden="true"></i>
         <br>There are no events</p>
     </div>
+
     <div ng-repeat="event in $ctrl.events track by $index" class="es-event-list">
       <div class="es-event-remove text-right" ng-click="$ctrl.removeEvent(event.uid, $index)"><i class="fa fa-times"></i></div>
 
@@ -30,5 +31,6 @@
       
       </div>
     </div>
+
   </div>
 </div>

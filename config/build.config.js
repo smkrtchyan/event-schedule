@@ -13,7 +13,8 @@ config.styles 		= config.app.src + '/styles/**/*.scss';
 config.templates  = config.app.src + '/modules/**/*.template.html';
 
 config.fonts = [
-  'app/bower_components/font-awesome/fonts/**/*.{ttf,woff,woff2,otf,eof,eot,svg}'
+  'app/bower_components/font-awesome/fonts/**/*.{ttf,woff,woff2,otf,eof,eot,svg}',
+  'app/bower_components/bootstrap-sass/assets/fonts/bootstrap/**/*.{ttf,woff,woff2,otf,eof,eot,svg}'
 ]
 
 config.scripts = [

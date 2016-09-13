@@ -238,8 +238,8 @@ th {
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url("../../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot");
-  src: url("../../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"), url("../../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("../../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("../../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
+  src: url("../../dist/fonts/glyphicons-halflings-regular.eot");
+  src: url("../../dist/fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../../dist/fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("../../dist/fonts/glyphicons-halflings-regular.woff") format("woff"), url("../../dist/fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("../../dist/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
 
 .glyphicon {
   position: relative;
@@ -7902,7 +7902,7 @@ button.close {
   clip: auto; }
 
 /**
- * @license angular-bootstrap-datetimepicker  version: 0.4.0
+ * @license angular-bootstrap-datetimepicker
  * Copyright 2016 Knight Rider Consulting, Inc. http://www.knightrider.com
  * License: MIT
  */
@@ -7954,8 +7954,14 @@ button.close {
     background-repeat: repeat-x;
     border-color: #04c #04c #002a80;
     color: #fff;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#08c', endColorstr='#04c', GradientType=0);
+    -webkit-filter: progid:dximagetransform.microsoft.gradient(startColorstr='#08c', endColorstr='#04c', GradientType=0);
+            filter: progid:dximagetransform.microsoft.gradient(startColorstr='#08c', endColorstr='#04c', GradientType=0);
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); }
+  .datetimepicker .current,
+  .datetimepicker .current:hover,
+  .datetimepicker .current.disabled,
+  .datetimepicker .current.disabled:hover {
+    background-color: #e5e5e5; }
   .datetimepicker .active:hover,
   .datetimepicker .active:hover:hover,
   .datetimepicker .active.disabled:hover,

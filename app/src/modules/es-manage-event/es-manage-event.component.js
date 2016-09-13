@@ -79,13 +79,31 @@ angular.module('esManageEvent')
 
       }
 
-      function _beforeTimePick($dates) {
-        var i;
+      function _beforeTimePick($dates, $view) {
+        var i, activeDate, now = moment();
 
         for (i = 0; i < $dates.length; i++) {
-          if (moment($dates[i].utcDateValue).isBefore(moment())) {
+
+          activeDate = moment($dates[i].localDateValue());
+
+          if($view == 'day'){
+            activeDate.hour(now.hour()).minute(now.minute() + 1);
+          }
+          else if($view == 'hour'){
+            activeDate.minute(now.minute() + 1)
+          }
+
+          if (activeDate.isBefore( now )) {
             $dates[i].selectable = false;
           }
+
+          // console.log('view', $view);
+          // console.log('utc', moment($dates[i].utcDateValue).utc().locale(), '-', activeDate.locale());
+          // console.log('std', moment($dates[i].utcDateValue).format());
+          // console.log('now', now.format() );
+          // console.log('act', activeDate.format());
+          // console.log('dat', moment($dates[i].localDateValue()).format() );
+          // console.log('--------------', $dates[i].selectable);
         }
       }
 

@@ -27,7 +27,7 @@
 									
                 </a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                    <datetimepicker data-ng-model="$ctrl.event.start" data-before-render="$ctrl.beforeTimePick($dates)" data-datetimepicker-config="{ dropdownSelector: '#eventStartDate', modelType : 'moment' }"></datetimepicker>
+                    <datetimepicker data-ng-model="$ctrl.event.start" data-before-render="$ctrl.beforeTimePick($dates, $view)" data-datetimepicker-config="{ dropdownSelector: '#eventStartDate', modelType : 'moment' }"></datetimepicker>
                 </ul>
             </div>
         </div>
@@ -41,7 +41,7 @@
                     </div>
                 </a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                    <datetimepicker data-ng-model="$ctrl.event.end"  data-before-render="$ctrl.beforeTimePick($dates)"  data-datetimepicker-config="{ dropdownSelector: '#eventEndDate', modelType : 'moment'}"></datetimepicker>
+                    <datetimepicker data-ng-model="$ctrl.event.end"  data-before-render="$ctrl.beforeTimePick($dates, $view)"  data-datetimepicker-config="{ dropdownSelector: '#eventEndDate', modelType : 'moment'}"></datetimepicker>
                 </ul>
             </div>
         </div>
