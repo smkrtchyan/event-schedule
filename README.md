@@ -5,15 +5,18 @@ AngularJS Event Scheduler
 
 ### With Local webserver
 
-Run command 
+ 
+* Install  [node.js](http://nodejs.org/download/)
+
+* Run the server
 ```
 npm start
 ``` 
-which will create `http://localhost:8000` local webserver 
+Browse to the application at [http://localhost:8000]
 
 ### Without webserver
 
 Just open `app/index.html` in the browser
 
 ## Info
-Periodically notifies about upcoming events each 1 min when remains 15 minutes to event start.
+Application periodically notifies about upcoming events each 1 min when remains 15 minutes to event start.
