@@ -50,7 +50,7 @@ angular.module('esManageEvent')
           uid: +new Date(),
           name: _self.event.name || _defaults.name,
           start: +new Date(_self.event.start),
-          end: +new Date(_self.event.end),
+          end: !!(_self.event.end) ? +new Date(_self.event.end) : null,
           isAllDay: !!(_self.event.isAllDay),
           desc: _self.event.desc || null
         }
@@ -96,14 +96,6 @@ angular.module('esManageEvent')
           if (activeDate.isBefore( now )) {
             $dates[i].selectable = false;
           }
-
-          // console.log('view', $view);
-          // console.log('utc', moment($dates[i].utcDateValue).utc().locale(), '-', activeDate.locale());
-          // console.log('std', moment($dates[i].utcDateValue).format());
-          // console.log('now', now.format() );
-          // console.log('act', activeDate.format());
-          // console.log('dat', moment($dates[i].localDateValue()).format() );
-          // console.log('--------------', $dates[i].selectable);
         }
       }
 
@@ -122,7 +114,6 @@ angular.module('esManageEvent')
 
           angular.extend(_self.action.eventOldValue, esEvent.getById(selectedEventId).event);
           _self.event = _self.action.eventOldValue;
-
         } else {
           _self.action.type = 'add';
           _self.action.title = "Add new event";
