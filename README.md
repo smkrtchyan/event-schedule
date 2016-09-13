@@ -1,7 +1,7 @@
 # event-schedule
 AngularJS Event Scheduler
 
-## Installation
+## Usage
 
 ### With Local webserver
 
