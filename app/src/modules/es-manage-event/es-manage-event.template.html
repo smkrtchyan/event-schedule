@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="col-sm-6">
-            <div class="dropdown form-group" ng-show="!$ctrl.event.isAllDay">
+            <div class="dropdown form-group" ng-show="!$ctrl.event.isAllDay" >
                 <a class="dropdown-toggle" id="eventEndDate" data-toggle="dropdown" data-target="#" >
                     <div class="input-group es-datepicker">
                     <span class="form-control  es-datepicker-label" ng-bind="$ctrl.event.end | amDateFormat: 'ddd, MMM Do YYYY, h:mm a' "></span>
@@ -41,7 +41,7 @@
                     </div>
                 </a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                    <datetimepicker data-ng-model="$ctrl.event.end"  data-before-render="$ctrl.beforeTimePick($dates, $view)"  data-datetimepicker-config="{ dropdownSelector: '#eventEndDate', modelType : 'moment'}"></datetimepicker>
+                    <datetimepicker data-ng-model="$ctrl.event.end"  data-before-render="$ctrl.beforeTimePick($dates, $view)"  data-datetimepicker-config="{ dropdownSelector: '#eventEndDate', modelType : 'moment'}" ></datetimepicker>
                 </ul>
             </div>
         </div>

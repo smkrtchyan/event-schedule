@@ -41,7 +41,7 @@ gulp.task('scripts', function() {
   // append the template js onto app.js
   .pipe(addStream.obj(prepareTemplates()))
     .pipe($.concat('app.min.js'))
-    //.pipe($.uglify())
+    .pipe($.uglify())
     .pipe(gulp.dest(config.app.dist + '/scripts'))
 });
 
@@ -62,4 +62,4 @@ gulp.task('watch', ['fonts', 'styles', 'scripts'], function() {
   gulp.watch(config.templates,['scripts']);
 })
 
-gulp.task('build', ['clean:dist', 'fonts', 'styles', 'scripts']);
+gulp.task('build', ['fonts', 'styles', 'scripts']);
