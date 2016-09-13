@@ -22,5 +22,13 @@ angular.module('esApp')
 	])
 
 	.constant('NOTIFY', {
-		interval : 120000 // 2min
-	});
+		interval : 60000 // 1min
+	})
+
+	.run(['$rootScope', '$interval', 'NOTIFY', 'esEvent', function($rootScope, $interval, NOTIFY, esEvent){
+		var childScope = $rootScope.$new();
+		 
+		$interval(function(){
+			esEvent.notifyOnUpcoming(childScope);
+		}, NOTIFY.interval);
+	}]);

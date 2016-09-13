@@ -13,11 +13,13 @@
     </div>
 
     <div class="form-group">
-        <input type="text" ng-model="$ctrl.event.name" class="form-control" placeholder="Untitled event">
+        <label>Event title</label>
+        <input type="text" ng-model="$ctrl.event.name" class="form-control">
     </div>
     <div class="row">
         <div class="col-sm-6">
             <div class="dropdown form-group">
+                <label>Start Date</label>
                 <a class="dropdown-toggle" id="eventStartDate" data-toggle="dropdown" data-target="#" >
                     <div class="input-group es-datepicker">
                     		<span class="form-control  es-datepicker-label" ng-bind="$ctrl.event.start | amDateFormat: 'ddd, MMM Do YYYY, h:mm a' "></span>
@@ -27,12 +29,17 @@
 									
                 </a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                    <datetimepicker data-ng-model="$ctrl.event.start" data-before-render="$ctrl.beforeTimePick($dates, $view)" data-datetimepicker-config="{ dropdownSelector: '#eventStartDate', modelType : 'moment' }"></datetimepicker>
+                    <datetimepicker 
+                    data-ng-model="$ctrl.event.start" 
+                    data-before-render="$ctrl.startDateBeforeRender($dates, $view)" 
+                    data-on-set-time="$ctrl.startDateOnSetTime()"
+                    data-datetimepicker-config="{ dropdownSelector: '#eventStartDate', renderOn: 'end-date-changed', modelType: 'moment'}"></datetimepicker>
                 </ul>
             </div>
         </div>
         <div class="col-sm-6">
             <div class="dropdown form-group" ng-show="!$ctrl.event.isAllDay" >
+            <label>End Date</label>
                 <a class="dropdown-toggle" id="eventEndDate" data-toggle="dropdown" data-target="#" >
                     <div class="input-group es-datepicker">
                     <span class="form-control  es-datepicker-label" ng-bind="$ctrl.event.end | amDateFormat: 'ddd, MMM Do YYYY, h:mm a' "></span>
@@ -41,7 +48,12 @@
                     </div>
                 </a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                    <datetimepicker data-ng-model="$ctrl.event.end"  data-before-render="$ctrl.beforeTimePick($dates, $view)"  data-datetimepicker-config="{ dropdownSelector: '#eventEndDate', modelType : 'moment'}" ></datetimepicker>
+                    <datetimepicker 
+                    data-ng-model="$ctrl.event.end"  
+                    data-before-render="$ctrl.endDateBeforeRender($dates, $view)"  
+                    data-datetimepicker-config="{ dropdownSelector: '#eventEndDate', renderOn: 'start-date-changed', modelType: 'moment'}"
+                    data-on-set-time="$ctrl.endDateOnSetTime()"
+                     ></datetimepicker>
                 </ul>
             </div>
         </div>

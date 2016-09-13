@@ -7902,7 +7902,7 @@ button.close {
   clip: auto; }
 
 /**
- * @license angular-bootstrap-datetimepicker
+ * @license angular-bootstrap-datetimepicker  version: 0.4.0
  * Copyright 2016 Knight Rider Consulting, Inc. http://www.knightrider.com
  * License: MIT
  */
@@ -7954,14 +7954,8 @@ button.close {
     background-repeat: repeat-x;
     border-color: #04c #04c #002a80;
     color: #fff;
-    -webkit-filter: progid:dximagetransform.microsoft.gradient(startColorstr='#08c', endColorstr='#04c', GradientType=0);
-            filter: progid:dximagetransform.microsoft.gradient(startColorstr='#08c', endColorstr='#04c', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#08c', endColorstr='#04c', GradientType=0);
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); }
-  .datetimepicker .current,
-  .datetimepicker .current:hover,
-  .datetimepicker .current.disabled,
-  .datetimepicker .current.disabled:hover {
-    background-color: #e5e5e5; }
   .datetimepicker .active:hover,
   .datetimepicker .active:hover:hover,
   .datetimepicker .active.disabled:hover,
@@ -8498,3 +8492,6 @@ button.close {
   height: 0;
   border: none;
   padding: 0; }
+
+.datetimepicker .past.disabled {
+  color: #ebebeb; }

@@ -56,10 +56,35 @@ angular.module('esCore.event')
 			Notification.success('<i class="fa fa-info-circle"></i> Event has been removed');
 		}
 
+		function _getUpcomingEvents(){
+			var upcomingEvents = _getEventsByDay(moment());	        
+
+	        return upcomingEvents.filter(function(event){
+	        	var leftTime = moment(event.start).diff(moment(), 'minutes', true);
+	        	return (leftTime >= 0 && leftTime <= 16);
+	        })
+	        
+		}
+
+		function _notifyOnCommingEvents(scope){
+				upcomingEvents = _getUpcomingEvents();
+
+				if(upcomingEvents.length){
+					scope.upcomingEvents = upcomingEvents;
+
+	        Notification.success({
+	          title: 'Upcoming events',
+	          message: '',
+	          templateUrl: "src/modules/es-calendar/es-calendar-notify.template.html",
+	          scope: scope
+	        });
+	      }
+		}
+
 		function _init(){
 			allEvents = esStorage.get('events') || [];
 		}
-
+		
 		_init();
 
 		return {
@@ -67,7 +92,9 @@ angular.module('esCore.event')
 			getById: 	_getEventById,
 			add: 			_addEvent,
 			remove: 	_removeEvent,
-			update: 	_updateEvent
+			update: 	_updateEvent,
+			getUpcoming: _getUpcomingEvents,
+			notifyOnUpcoming : _notifyOnCommingEvents
 		}
 	}
 

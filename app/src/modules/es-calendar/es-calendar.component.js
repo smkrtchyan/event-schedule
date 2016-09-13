@@ -50,8 +50,8 @@ function esCalendarController($scope, $interval, moment, Notification, esEvent, 
       }
   }
 
-  _self.$onInit = function() {
-    _notifyInterval = $interval(_notifyOnCommingEvents, NOTIFY.interval);
+  _self.$onInit = function() { 
+    //_notifyInterval = $interval(_notifyOnCommingEvents, NOTIFY.interval);
   }
 
   _self.$onDestroy = function() {
