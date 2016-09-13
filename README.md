@@ -16,4 +16,4 @@ which will create `http://localhost:8000` local webserver
 Just open `app/index.html` in the browser
 
 ## Info
-Periodically notifies about upcoming events each 2 min when remains 15 minutes to event start.
+Periodically notifies about upcoming events each 1 min when remains 15 minutes to event start.
