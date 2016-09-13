@@ -3,11 +3,11 @@ AngularJS Event Scheduler
 
 ## Installation
 
-1. With Local webserver
+With Local webserver
 
 Run  `npm start` command , which will creat `http://localhost:8000` local webserver 
 
-2. Without webserver
+Without webserver
 
 Just open `app/index.html` in the browser
 
